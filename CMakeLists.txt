@@ -34,6 +34,11 @@ include_directories(include
 add_library(${PROJECT_NAME} ${SRC_FILES})
 target_link_libraries(${PROJECT_NAME} ${Poco_LIBRARIES} ${catkin_LIBRARIES})
 
+# add_subdirectory(examples)
+add_executable(main src/main.cc)
+target_include_directories(main PUBLIC include/)
+target_link_libraries(main PUBLIC ${PROJECT_NAME})
+
 #############
 ## Install ##
 #############
